@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mid-Century Minimal</title>
+    <title>Kairos Creative Studio</title>
     <style>
         :root {
-            --sunset-orange: #E85D3F;
-            --muted-orange: #C76D5F;
-            --deep-blue: #2B4C6F;
-            --bg-color: #F5F2EB;
-            --text-color: #2A2A2A;
+            --primary-color: #E85D3F; /* Sunset Orange */
+            --secondary-color: #2B4C6F; /* Deep Blue */
+            --accent-color: #FFAE42; /* Warm Sunset Yellow */
+            --background-gradient: linear-gradient(135deg, #E85D3F, #2B4C6F, #FFAE42);
+            --text-color: #F5F2EB;
         }
 
         * {
@@ -21,7 +21,7 @@
         }
 
         body {
-            background: var(--bg-color);
+            background: var(--background-gradient);
             color: var(--text-color);
             line-height: 1.6;
         }
@@ -37,30 +37,67 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(165deg, var(--sunset-orange) 0%, var(--deep-blue) 100%);
-        }
-
-        .hero-content {
             text-align: center;
-            z-index: 2;
-            color: var(--bg-color);
+            position: relative;
         }
 
         .hero-title {
             font-size: 4rem;
-            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5rem;
             font-weight: 300;
+            background: -webkit-linear-gradient(left, #FFF, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
-            color: rgba(245, 242, 235, 0.9);
-            margin-bottom: 2rem;
+            margin-top: 1rem;
             font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: var(--text-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-color);
+            color: var(--secondary-color);
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--text-color);
+        }
+
+        .nav-brand {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            text-transform: uppercase;
         }
 
         .grid {
@@ -71,108 +108,15 @@
         }
 
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
-            border-radius: 2px;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
             transition: transform 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h2 {
-            color: var(--sunset-orange);
-            margin-bottom: 1rem;
-            font-weight: 500;
         }
 
         .card:hover {
             transform: translateY(-5px);
-        }
-
-        .sun {
-            width: 200px;
-            height: 200px;
-            background: #FFF5E9;
-            border-radius: 50%;
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0.8;
-            z-index: 1;
-        }
-
-        .geometric-shape {
-            position: absolute;
-            background: var(--muted-orange);
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .shape-1 {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            top: -200px;
-            right: -200px;
-        }
-
-        .shape-2 {
-            width: 300px;
-            height: 300px;
-            transform: rotate(45deg);
-            bottom: 100px;
-            left: -150px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: transparent;
-            color: var(--bg-color);
-            text-decoration: none;
-            border: 2px solid var(--bg-color);
-            border-radius: 2px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            font-weight: 400;
-        }
-
-        .cta-button:hover {
-            background: var(--bg-color);
-            color: var(--sunset-orange);
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--bg-color);
-        }
-
-        .nav-brand {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: var(--bg-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
@@ -193,52 +137,37 @@
 </head>
 <body>
     <nav class="nav">
-        <div class="nav-brand">Sunset</div>
+        <div class="nav-brand">Kairos Creative</div>
         <div class="nav-links">
-            <a href="#" class="nav-link">About</a>
-            <a href="#" class="nav-link">Work</a>
-            <a href="#" class="nav-link">Contact</a>
-            <a href="#" class="nav-link">Subscribe</a>
+            <a href="#">About</a>
+            <a href="#">Work</a>
+            <a href="#">Contact</a>
         </div>
     </nav>
 
     <div class="hero">
-        <div class="geometric-shape shape-1"></div>
-        <div class="geometric-shape shape-2"></div>
-        <div class="sun"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Mid-Century</h1>
-            <p class="hero-subtitle">Where simplicity meets style</p>
-            <a href="#" class="cta-button">Explore</a>
+        <div>
+            <h1 class="hero-title">Kairos Creative</h1>
+            <p class="hero-subtitle">Retro is the New Now</p>
+            <a href="#" class="cta-button">Discover More</a>
         </div>
     </div>
 
     <div class="container">
         <div class="grid">
             <div class="card">
-                <h2>Simplicity</h2>
-                <p>Clean lines and minimalist design principles create a timeless aesthetic that speaks volumes.</p>
+                <h2>Timeless Innovation</h2>
+                <p>We blend creativity with the right moment to create lasting impact.</p>
             </div>
             <div class="card">
-                <h2>Harmony</h2>
-                <p>A perfect balance of form and function, where every element serves a purpose.</p>
+                <h2>Unique Identity</h2>
+                <p>Your brand, reimagined through bold visuals and storytelling.</p>
             </div>
             <div class="card">
-                <h2>Heritage</h2>
-                <p>Drawing inspiration from the golden age of design while embracing modern sensibilities.</p>
+                <h2>Inspired by Time</h2>
+                <p>Our designs fuse past, present, and future aesthetics seamlessly.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(232, 93, 63, 0.95)';
-            } else {
-                nav.style.background = 'transparent';
-            }
-        });
-    </script>
 </body>
 </html>
