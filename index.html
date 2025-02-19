@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairos Creative Studio</title>
+    <title>Kairos</title>
     <style>
         :root {
-            --primary-color: #E85D3F; /* Sunset Orange */
-            --secondary-color: #2B4C6F; /* Deep Blue */
-            --accent-color: #FFAE42; /* Warm Sunset Yellow */
-            --background-gradient: linear-gradient(135deg, #E85D3F, #2B4C6F, #FFAE42);
-            --text-color: #F5F2EB;
+            --dark-color: #161618;
+            --light-color: #fefcf2;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', sans-serif;
+            font-family: 'Cooper Black', sans-serif;
         }
 
         body {
-            background: var(--background-gradient);
-            color: var(--text-color);
+            background: var(--light-color);
+            color: var(--dark-color);
             line-height: 1.6;
         }
 
@@ -38,135 +35,28 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
+            background: var(--dark-color);
+            color: var(--light-color);
         }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 6rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5rem;
-            font-weight: 300;
-            background: -webkit-linear-gradient(left, #FFF, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-top: 1rem;
             font-weight: 300;
-        }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: var(--text-color);
-            color: var(--primary-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--accent-color);
-            color: var(--secondary-color);
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--text-color);
-        }
-
-        .nav-brand {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 5px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-brand">Kairos Creative</div>
-        <div class="nav-links">
-            <a href="#">About</a>
-            <a href="#">Work</a>
-            <a href="#">Contact</a>
-        </div>
-    </nav>
-
     <div class="hero">
-        <div>
-            <h1 class="hero-title">Kairos Creative</h1>
-            <p class="hero-subtitle">Retro is the New Now</p>
-            <a href="#" class="cta-button">Discover More</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="grid">
-            <div class="card">
-                <h2>Timeless Innovation</h2>
-                <p>We blend creativity with the right moment to create lasting impact.</p>
-            </div>
-            <div class="card">
-                <h2>Unique Identity</h2>
-                <p>Your brand, reimagined through bold visuals and storytelling.</p>
-            </div>
-            <div class="card">
-                <h2>Inspired by Time</h2>
-                <p>Our designs fuse past, present, and future aesthetics seamlessly.</p>
-            </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Kairos</h1>
+            <p class="hero-subtitle">The perfect time is now</p>
         </div>
     </div>
 </body>
